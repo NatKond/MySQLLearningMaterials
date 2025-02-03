@@ -74,7 +74,7 @@ where email like "%.ru" or email like "%.ge";
 
 select *
 from employees
-where name like "%ов" or name like "%ев";
+where name like "%ов%" or name like "%ев%";
 
 select *
 from employees
