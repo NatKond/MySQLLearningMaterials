@@ -62,19 +62,19 @@ where job_title like '%Менеджер%';
 
 select *
 from employees
-where department = "HR";
+where department != "HR";
 
 select *
 from employees
-where salary > 70000 and department = "Финансы";
+where salary > 70000 or department = "Финансы";
 
 select *
 from employees
-where email like "%.ru" or email like "%.ge";
+where email like "%.ru%" or email like "%.ge%";
 
 select *
 from employees
-where name like "%ов%" or name like "%ев%";
+where name like "% %ов%" or name like "% %ев%";
 
 select *
 from employees
