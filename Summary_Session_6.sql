@@ -261,7 +261,7 @@ update Staff
 	end;
 
 -- 9. Вывести возраст всех сотрудников, увеличенный на 5 лет.
-select fullname, age*5 
+select fullname, age+5 
 from Staff;
 
 -- 10.Создать новое поле salary_category и заполнить его значением:
