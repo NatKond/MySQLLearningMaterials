@@ -261,7 +261,7 @@ update Staff
 	end;
 
 -- 9. Вывести возраст всех сотрудников, увеличенный на 5 лет.
-select fullname, age+5 
+select fullname, age+5 as age 
 from Staff;
 
 -- 10.Создать новое поле salary_category и заполнить его значением:
@@ -318,6 +318,21 @@ add column username_default varchar(128);
 
 update Staff
 	set username_default = ifnull(username, 'unknown');
+    
+-- Вариант 1
+update staff
+set username_default = case
+							when username is not null then username
+                            else 'unknown'
+						end;
+    
+-- Вариант 2                    
+update staff
+set username_default = coalesce(username, 'unknown');
+
+-- Вариант 3
+update staff
+set username_default = if(username is not null, username, 'unknown');
 
 select *
 from Staff;
