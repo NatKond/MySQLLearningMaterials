@@ -2222,7 +2222,7 @@ on emp.department_id = dep.department_id
 where dep.department_name = 'IT' and salary > (select avg(salary) from employees);
 
 -- 11. Вывести имена и фамилии сотрудников с должностями IT_PROG и ST_MAN, которые получают либо самую низкую, либо самую высокую зарплату.
-select first_name, last_name, salary
+select first_name, last_name, salary, job_id
 from employees
 where job_id in ('IT_PROG', 'ST_MAN') and(
 	salary = (select max(salary) from employees where job_id in ('IT_PROG', 'ST_MAN')) or
